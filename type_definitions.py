@@ -5,23 +5,24 @@ education_level = Literal['high_school', 'bachelor', 'master', 'doctorate']
 preferred_activity = Literal['hiking', 'swimming', 'skiing', 'sunbathing']
 location = Literal['urban', 'suburban', 'rural']
 favourite_season = Literal['summer', 'winter', 'spring', 'fall']
+preference = Literal['mountains', 'beaches']
 
 
 class Person(TypedDict):
-    Age: str | int
+    Age: int
     Gender: gender
-    Income: str | int
+    Income: int
     Education_Level: education_level
-    Travel_Frequency: str | int
+    Travel_Frequency: int
     Preferred_Activities: preferred_activity  
-    Vacation_Budget: str | int
+    Vacation_Budget: int
     Location: location  
-    Proximity_to_Mountains: str | int 
-    Proximity_to_Beaches: str | int
+    Proximity_to_Mountains: int 
+    Proximity_to_Beaches: int
     Favorite_Season: favourite_season  
-    Pets: Literal['0', '1'] | int
-    Environmental_Concerns: Literal['0', '1'] | Literal[0, 1]
-    Preference: Literal['0', '1'] | Literal[0, 1]
+    Pets: bool
+    Environmental_Concerns: bool
+    Preference: preference
 
 
 class PersonFilter(TypedDict, total=False):
@@ -38,4 +39,4 @@ class PersonFilter(TypedDict, total=False):
     Favorite_Season: Union[favourite_season, List[favourite_season]]
     Pets: bool
     Environmental_Concerns: bool
-    Preference: Literal['0', '1'] | Literal[0, 1]
+    Preference: preference
