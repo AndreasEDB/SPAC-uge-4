@@ -1,6 +1,6 @@
 import csv
 import os
-import kagglehub
+import kagglehub #type: ignore
 
 class KaggleData:
     kaggle_path: str = ''
